@@ -27,9 +27,14 @@ dependencies:
 
     # move repository to the canonical import path
     - mkdir -p "$(dirname ${WORKDIR})"
-    - cp -R "${HOME}/helm" "${WORKDIR}"
+    - cp -R "${HOME}/kube-event-notifier" "${WORKDIR}"
 
     # install dependencies
     - cd "${WORKDIR}" && make bootstrap
 
   post:
+    - go env
+
+test:
+  override:
+    - go test $(glide nv)
