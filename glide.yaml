@@ -1,0 +1,4 @@
+package: github.com/ConorNevin/kube-event-notifier
+import:
+- package: k8s.io/client-go
+  version: ^2.0.0
